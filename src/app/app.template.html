@@ -1,0 +1,46 @@
+
+
+<ion-menu [content]="content" color="navheader">
+  <ion-header>
+    <ion-toolbar color="navheader">
+      <div text-center>
+      <img style="white-space: pre; width:125px; height:125px" src="assets/img/logosample.png">
+            
+            <p style="white-space: pre; color:aliceblue">@Username</p>
+    </div>
+      <ion-row no-padding>
+      <ion-col text-left>
+        <button ion-button clear medium color="light" icon-start>
+          <ion-icon name='star'></ion-icon>
+          My Favorite
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear medium color="light" icon-start>
+          <ion-icon name='share-alt'></ion-icon>
+          Explor
+        </button>
+      </ion-col>
+    </ion-row>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list >
+      <button color="navcontent" ion-item *ngFor="let p of pages" menuClose (click)="openPage(p)">
+        <ion-icon [name]="p.icon" [ngStyle]="{'color': p.color}" item-start></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <!-- Display all of the sections if this isn't production -->
+    <ion-list *ngIf="!isProductionMode">
+      <button ion-item *ngFor="let route of routes" menuClose (click)="openPage(route)">
+        {{ route.path | displayRoute }}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

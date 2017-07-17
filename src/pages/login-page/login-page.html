@@ -1,0 +1,36 @@
+<ion-content class="background" >
+
+  <div padding [@flyInBottomFast]="cloudState" id="cloud-layer">
+
+    <ion-row>
+      <ion-col>
+        <img [@flyInBottomSlow]="logoState" src="assets/img/logo.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list inset [@bounceInBottom]="formState">
+
+          <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <button ion-button round outline class="login-button" (click)="doLogin()" [@fadeIn]="loginState">Login</button>
+        <button ion-button round outline class="login-button" [@fadeIn]="loginState">Register</button>
+    </ion-row>
+
+  </div>
+
+</ion-content>
