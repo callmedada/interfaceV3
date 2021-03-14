@@ -1,6 +1,2 @@
-# interfaceV3
-interfaceV3
-
-NPM install
-
-ionic serve -l
+# Indigenous Friend App Framework 
+Early version for Indigenous Friend App. Built with Ionic Angular. 
